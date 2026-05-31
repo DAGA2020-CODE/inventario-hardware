@@ -1,113 +1,98 @@
-                                          Comparativa de Paradigmas de Programación
-                                           Programación Avanzada - Spring Boot 3.4+
-                                                          Autor
+# 📊 Comparativa de Paradigmas de Programación
+> **Programación Avanzada - Spring Boot 3.4+**
 
-                                                      Darwin  Gañan
-Descripción del Proyecto
+Este proyecto implementa una solución robusta para la gestión y análisis de inventario de equipos tecnológicos. El sistema procesa eficientemente un conjunto de **10,000 registros** de hardware, generando reportes analíticos detallados sobre la disponibilidad y valoración de los equipos.
 
-Este proyecto implementa una solución para la gestión y análisis de inventario de equipos tecnológicos utilizando Spring Boot.
+---
 
-El sistema procesa un conjunto de 10.000 registros de hardware y genera reportes analíticos sobre disponibilidad y valoración de equipos.
+## 👤 Autor
+*   **Darwin Gañan**
 
-La solución fue desarrollada utilizando dos paradigmas de programación:
+---
 
-Paradigma Imperativo
-Paradigma Funcional/Declarativo (Java Streams API)
-Arquitectura Utilizada
+## 🏗️ Arquitectura del Proyecto
+Se ha implementado una arquitectura limpia por capas para asegurar la escalabilidad y mantenibilidad:
 
-El proyecto fue desarrollado siguiendo una arquitectura por capas:
+- **Controller**: Gestión de endpoints REST.
+- **Service**: Lógica de negocio y procesamiento de paradigmas.
+- **Entity / Model**: Definición de estructuras de datos.
+- **DTO**: Transferencia de datos optimizada.
+- **Enums & Utils**: Componentes de apoyo y generadores de datos.
 
-Controller
-Service
-Entity
-DTO
-Enums
-Util
+### 🧩 Componentes Principales
+- `HardwareController`
+- `HardwareService`
+- `AiService`
+- `DataGenerator`
 
-Componentes principales:
+---
 
-HardwareController
-HardwareService
-AiService
-HardwareEntity
-DataGenerator
-Funcionalidades
+## 🚀 Funcionalidades
+El sistema realiza operaciones analíticas avanzadas sobre 10,000 registros:
+- [x] Filtrado dinámico de equipos activos.
+- [x] Análisis de compras de los últimos 5 años.
+- [x] Agrupación inteligente por categorías.
+- [x] Cálculo de valor total y precio promedio por categoría.
+- [x] Identificación de activos de alto valor (equipo más costoso).
+- [x] Generación de resúmenes mediante integración con AI Service.
 
-El sistema realiza las siguientes operaciones:
+---
 
-Generación de 10.000 registros de hardware.
-Filtrado de equipos activos.
-Filtrado de equipos comprados durante los últimos 5 años.
-Agrupación por categoría.
-Cálculo del valor total por categoría.
-Cálculo del precio promedio por categoría.
-Obtención del equipo más costoso por categoría.
-Generación de resumen mediante AI Service.
-Endpoints REST
-Implementación Imperativa
-GET /hardware/imperativo
-Implementación Funcional
-GET /hardware/streams
-Comparación de Paradigmas
-Paradigma Imperativo
+## 🛣️ Endpoints REST
 
-Características:
+| Método | Endpoint | Descripción |
+| :--- | :--- | :--- |
+| `GET` | `/hardware/imperativo` | Procesamiento utilizando lógica tradicional. |
+| `GET` | `/hardware/funcional` | Procesamiento utilizando Java Streams API. |
 
-Uso de ciclos for.
-Uso de estructuras if.
-Uso de acumuladores manuales.
-Agrupación manual de información.
+---
 
-Ventajas:
+## 🔍 Comparación de Paradigmas
 
-Fácil de comprender para principiantes.
-Permite controlar paso a paso la ejecución.
+### 🔴 Paradigma Imperativo
+**Características:**
+- Uso extensivo de ciclos `for` y `foreach`.
+- Control manual mediante estructuras `if-else`.
+- Gestión de estado mediante acumuladores y banderas.
 
-Desventajas:
+**Pros/Contras:**
+- ✅ **Ventaja:** Control total sobre el flujo paso a paso; fácil de depurar para principiantes.
+- ❌ **Desventaja:** Código más extenso, propenso a errores de estado y difícil de mantener en grandes volúmenes.
 
-Mayor cantidad de líneas de código.
-Más propenso a errores humanos.
-Menor mantenibilidad en proyectos grandes.
-Paradigma Funcional (Streams API)
+### 🔵 Paradigma Funcional (Java Streams API)
+**Características:**
+- Uso de funciones de alto nivel: `stream()`, `filter()`, `map()`.
+- Reducción y recolección mediante `Collectors` y `groupingBy()`.
+- Uso de `Optional` para manejo seguro de nulos.
 
-Características:
+**Pros/Contras:**
+- ✅ **Ventaja:** Código declarativo, compacto y altamente legible. Facilita el procesamiento paralelo.
+- ❌ **Desventaja:** Curva de aprendizaje inicial más elevada para desarrolladores tradicionales.
 
-Uso de stream().
-Uso de filter().
-Uso de groupingBy().
-Uso de Collectors.
-Uso de Optional.
-Uso de summarizingDouble().
+---
 
-Ventajas:
+## 📈 Tabla Comparativa Técnica
 
-Código más compacto.
-Mayor legibilidad.
-Mejor mantenibilidad.
-Facilita operaciones complejas sobre colecciones.
+| Criterio | Paradigma Imperativo | Paradigma Funcional |
+| :--- | :--- | :--- |
+| **Líneas de Código** | ➕ Mayor cantidad | ➖ Menor cantidad |
+| **Legibilidad** | Media | Alta (Declarativa) |
+| **Mantenibilidad** | Compleja | Sencilla |
+| **Escalabilidad** | Limitada | Alta (Fácil paralelismo) |
+| **Complejidad Inicial** | Baja | Media |
 
-Desventajas:
+---
 
-Requiere mayor conocimiento del lenguaje.
-Puede resultar menos intuitivo para desarrolladores principiantes.
-Comparación Técnica
-Criterio	Imperativo	Funcional
-Líneas de código	Mayor cantidad	Menor cantidad
-Legibilidad	Media	Alta
-Mantenibilidad	Media	Alta
-Escalabilidad	Media	Alta
-Complejidad inicial	Baja	Media
-Uso de recursos	Similar	Similar
-Conclusiones
-Ambos paradigmas permiten resolver correctamente el problema planteado.
-La programación imperativa proporciona mayor control sobre el flujo de ejecución.
-La programación funcional reduce considerablemente la cantidad de código necesario.
-Streams API mejora la claridad y mantenibilidad de la solución.
-Para aplicaciones empresariales modernas, el enfoque funcional resulta más adecuado para el procesamiento de colecciones de datos.
-Tecnologías Utilizadas
-Java 21
-Spring Boot 3.4+
-Gradle
-Lombok
-REST API
-IntelliJ IDEA
+## 🛠️ Tecnologías Utilizadas
+*   **Lenguaje:** Java 21 ☕
+*   **Framework:** Spring Boot 3.4+ 🌱
+*   **Gestor de Dependencias:** Gradle 🐘
+*   **Productividad:** Lombok 🌶️
+*   **IDE:** IntelliJ IDEA 💎
+
+---
+
+## 💡 Conclusiones
+1.  Ambos paradigmas resuelven el problema, pero el enfoque **funcional** reduce drásticamente la verbosidad del código.
+2.  La **mantenibilidad** mejora significativamente con Streams API al expresar el "qué se hace" en lugar del "cómo se hace".
+3.  Para entornos empresariales modernos con Java 21, la **programación funcional** es el estándar recomendado para el procesamiento de colecciones de datos.
