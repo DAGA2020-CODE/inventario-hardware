@@ -6,7 +6,7 @@ Este proyecto implementa una solución robusta para la gestión y análisis de i
 ---
 
 ## 👤 Autor
-*   **Darwin Gañan**
+*   **Darwin Ganàn**
 
 ---
 
