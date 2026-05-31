@@ -1,8 +1,8 @@
-Comparativa de Paradigmas de Programación
-Programación Avanzada - Spring Boot 3.4+
-Autor
+                                          Comparativa de Paradigmas de Programación
+                                           Programación Avanzada - Spring Boot 3.4+
+                                                          Autor
 
-Darwin  Gañan
+                                                      Darwin  Gañan
 Descripción del Proyecto
 
 Este proyecto implementa una solución para la gestión y análisis de inventario de equipos tecnológicos utilizando Spring Boot.
